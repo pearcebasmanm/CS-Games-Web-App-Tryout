@@ -48,10 +48,18 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="p-8 bg-white/10 rounded-lg shadow-md space-y-2">
+          <h2 className="text-2xl font-semibold">🧩 Lego Building Fun</h2>
+          <p className="text-lg">
+            Unleash your creativity with our exclusive Lego building workshops. Perfect for families and
+            enthusiasts, where you can build amazing structures and enjoy a fun, hands-on experience.
+          </p>
+        </div>
+
       {/* Footer or any additional section */}
       <div className="mt-20 w-full bg-black/60 py-6">
         <p className="text-sm text-white text-center">
-          © 2025 Grand Vista Hotel. All rights reserved.
+          © 2025 Grand Lego Hotel. All rights reserved.
         </p>
       </div>
     </div>

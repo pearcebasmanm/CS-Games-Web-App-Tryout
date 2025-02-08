@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
       <nav className="navbar bg-black text-white p-4">
-        <h2 className="text-xl">Hotel Booking</h2>
+        <h2 className="text-xl">Grand Lego Hotel Booking</h2>
         <div className="flex space-x-4">
           <Link to="/" className="text-white hover:text-yellow-500">Home</Link>
           <Link to="/occupants" className="text-white hover:text-yellow-500">Occupants</Link>
