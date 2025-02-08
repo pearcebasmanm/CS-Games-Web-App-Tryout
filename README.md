@@ -13,8 +13,8 @@ You can use the following in a command line:
 git clone <your-github-repo-url>
 cd <your-repo-name>
 ```
-
 You can also clone it use any git client.
+
 ---
 
 ## 🛠 2. Set Up the Back-End (Flask)
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ### Run the Flask Server
 ```sh
-python app.py
+python server.py
 ```
 Flask should now be running on **http://127.0.0.1:5000**, or **http://localhost:5000**.
 
@@ -67,11 +67,17 @@ React should now be running on **http://localhost:3000**.
 
 From here, you should be able to start the challenge!
 
+## 🚀 Challenge Briefing
+
+In this challenge, you will be working on an incomplete version of a **Hotel Room Booking Web Application**. Your goal is to complete as many of the tasks provided in each track as possible, focusing on the ones you feel you are best at (it is unlikely you will have time to finish everything, so use your time wisely). There are 2 tracks to choose from: front-end and back-end. Each has three major tasks to complete. All tasks have the same weight (though some may appear harder than others), and if you complete tasks from both tracks, we will consider your relative skill level in both.
+
+The app comes pre-furnished with a Home page, 3 non-functional room booking related pages, and a default "page not found". They all come with a simple styling, in case you do not want to work on the front-end track.
+
 ## 🚀 Front-End Track
 
 This track involves showing us your design and page organization skills! There are no strict requirements for what it needs to look like, but try and show off your creativity, and make sure to align your design with the website's function.
 
-You may either directly work with React, HTML and CSS, or you may choose to instead design the website interfaces with Figma. **If you use Figma, please make sure to leave links to each of your created Figma pages in the "figma_folder" directory. Any resources you for that platform should be able to be stored/accessed in from that folder.**
+You may either directly work with React, HTML and CSS, or you may choose to instead design the website interfaces with Figma, Adobe or Canva software. **If you are only working on the front-end track, it is HIGHLY recommended to use Figma/Adobe/Canva. If you use any of these, please make sure to leave links to each of your created Figma pages in the file located in the "figma_folder" directory. Any resources you for that platform should be able to be stored/accessed in from that folder.**
 
 ### Task List
 
@@ -94,12 +100,18 @@ You may either directly work with React, HTML and CSS, or you may choose to inst
 
 - [ ] **Create Logic for Room Look-Up Page**  
   The logic for a room-look-up page will display information about the occupants of each room. Users should be able to easily search for a room and view relevant details, such as who is occupying it and for how long.
+  **On this page, you want to be able to select a room and a date, and get all relevant details about the occupants on that date. If the room is empty, display this somehow.**
+  The functionality should be displayed on the front-end through the RoomOccupant.js file.
 
 - [ ] **Create Logic to Book a Room and Assign a Customer**  
   A booking system will be developed to assign a customer to a specific room for a defined period. This includes processing the reservation, storing the relevant data, and ensuring that rooms are properly allocated based on availability.
+   **On this page, you want to be able to select a room, and a date. If the room is unoccpuied at said date, you must allow the user to enter an occupants information. That occupant must be saved into the system's data.Do not allow a room to be booked if it is occupied at the entered date.**
+  The functionality should be displayed on the front-end through the RoomBooking.js file.
 
 - [ ] **Create Logic for a Calendar View for Room Availability**  
   A calendar view should be implemented for each room, showing availability in a visually accessible way. By clicking on a specific room, users should be able to see a detailed calendar with availability dates, which will allow for easy booking.
+     **On this page, you want to be able to select a room, and a month. You must then display a calendar of that month (you may choose how that looks), where it is clear which days of the month are free, and which are occupied.**
+  The functionality should be displayed on the front-end through the RoomAvailability.js file.
 
 ## 🚀 Submission
 
