@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from data import rooms
 from booking_logic import book_room
 from occupants_logic import check_occupants
 from availability_logic import check_room_availability
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 
 # GET api/rooms
 @app.route("/api/rooms", methods=["GET"])
@@ -25,6 +27,7 @@ def get_room(room_number):
 
 # POST /api/book-room
 @app.route('/api/book-room', methods=['POST'])
+@cross_origin(supports_credentials=True)
 def book_room_route():
     data = request.json
     room_number = data.get('room_number')
@@ -34,26 +37,29 @@ def book_room_route():
     email = data.get('email')
     phone = data.get('phone')
     special_requests = data.get('special_requests')
-    
+
     result = book_room(room_number, name, check_in, check_out, email, phone, special_requests)
     return jsonify(result)
 
 # GET /api/check-occupants
 @app.route('/api/check-occupants', methods=['GET'])
+@cross_origin(supports_credentials=True)
 def check_occupants_route():
     room_number = int(request.args.get('room_number'))
     date = request.args.get('date')
-    
+
     result = check_occupants(room_number, date)
+    # result.headers.add("Access-Control-Allow-Origin", "*")
     return jsonify(result)
 
 # GET /api/check-availability
 @app.route('/api/check-availability', methods=['GET'])
+@cross_origin(supports_credentials=True)
 def check_availability_route():
     room_number = int(request.args.get('room_number'))
     month = int(request.args.get('month'))
     year = int(request.args.get('year'))
-    
+
     result = check_room_availability(room_number, month, year)
     return jsonify(result)
 
